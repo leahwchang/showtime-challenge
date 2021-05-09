@@ -1,9 +1,9 @@
 <template>
   <div class="moviescontainer">
-    <div class="movielist">
-      <div :key="title.id" v-for="title in titles">
-        <Movie :title="title" />
-      </div>
+    <div class="movielist" >
+      <!-- <div > -->
+        <Movie :key="title.id" v-for="title in titles" :title="title" />
+      <!-- </div> -->
     </div>
 
   </div>
