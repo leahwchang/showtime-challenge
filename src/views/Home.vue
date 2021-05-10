@@ -3054,6 +3054,13 @@
       ]
     }
   }
+
+//   const clickHandler = function(clickCount) {
+//   console.log(`The button has been clicked ${clickCount} times!`)
+// }
+
+// EventBus.$on('clicked', clickHandler);
+// EventBus.$off('clicked', clickHandler);
 </script>
 
 <style scoped>

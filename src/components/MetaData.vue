@@ -1,27 +1,33 @@
 <template>
   <div class="metadata">
-    <h1>SIDEBAR METADATA</h1>
-    <p @on="$emit('show-movie-details', title.name)"><strong>movie title</strong></p>
-    <p><strong>Rating:</strong> movie title rating</p>
-    <p><strong>Description:</strong> movie description.short</p>
+    <div v-if="sharedState.title.name ? true : false">
+      <p><strong>{{sharedState.title.name}}</strong></p>
+      <p><strong>Rating:</strong> {{sharedState.title.rating}}</p>
+      <p><strong>Description:</strong> {{sharedState.title.description }} </p>
+    </div>    
   </div>
 </template>
 
-bus.$on('cool_event_name', function(interesting_data) {
-   console.log(interesting_data)
-})
-
 <script>
+  import {
+    store
+  } from "@/store";
+
   export default {
     name: 'MetaData',
     props: {
       title: Object
     },
+    data() {
+      return {
+        sharedState: store.state
+      };
+    }
   }
 </script>
 
 <style scoped>
-.metadata {
-  text-align: left;
-}
+  .metadata {
+    text-align: left;
+  }
 </style>
