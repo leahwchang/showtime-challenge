@@ -1,6 +1,6 @@
 import {
   reactive
-} from 'vue';
+} from 'vue'
 
 export const store = {
   debug: true,
@@ -21,7 +21,7 @@ export const store = {
     if (this.debug) {
       console.log('clearMessageAction triggered')
     }
-    
+
     this.state.title = {}
   }
 }

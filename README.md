@@ -4,33 +4,36 @@
 Using Vue, render a grid of movie elements and a sidebar that displays metadata for a given film when it is clicked. Showtime provides a Vue instance containing the array of title data to be displayed (pulled from Showtime's titles API).
 
 ## Time and Takeaway
-This is the first time I used Vue for a project. I used Vue Cli and vue create to set up this project.
+This was the first time I used Vue for a project. I used Vue Cli and vue create to set up this project.
 
-Study/Tutorials time: ~6 hours
-Planning time: 
-Coding time:
-Styling time:
-Testing time:
-Total time used: 
+Study/Tutorials time: ~ 7 hrs
+Planning time: ~ 1 hrs
+Coding time: ~ 5 hrs (including tests)
+Styling time: ~ 2 hrs
 
 ## Project setup
 ```
 yarn install
 ```
 
+### Start up json backend server
+```
+yarn run backend
+```
+
 ### Compiles and hot-reloads for development
 ```
-yarn server
+yarn run server
 ```
 
 ### Compiles and minifies for production
 ```
-yarn build
+yarn run build
 ```
 
 ### Run your unit tests
 ```
-yarn test:unit
+yarn run test:unit
 ```
 
 ### Customize configuration

@@ -9,7 +9,7 @@
   import {
     store
   } from "@/store";
-  import Image from './Image.vue';
+  import Image from './Image.vue'
 
   export default {
     name: 'Movie',
@@ -22,11 +22,10 @@
     data() {
       return {
         sharedState: store.state
-      };
+      }
     },
     methods: {
       clickShowMovieDetails(title) {
-        // console.log('title', title.name, title.titleRating, title.description.short);
         let titleObj = {
           name: title.name,
           rating: title.titleRating,
