@@ -1,10 +1,15 @@
 <template>
   <div class="metadata">
     <div v-if="sharedState.title.name ? true : false">
-      <h2>{{ sharedState.title.name }}</h2>
-      <p><strong>Rating:</strong> <span id="rating">{{ sharedState.title.rating }}</span></p>
+      <h2 id="title-name">{{ sharedState.title.name }}</h2>
+      <p><strong>Rating:</strong> <span id="rating">{{ replaceUnderscore(sharedState.title.rating) }}</span></p>
       <p><strong>Description:</strong> <span id="description">{{ sharedState.title.description }}</span></p>
-    </div>    
+      <div class="flags">
+        <span class="flag" v-bind:key="flag" v-for="flag in sharedState.title.flags">
+          {{ replaceUnderscore(flag) }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,6 +27,11 @@
       return {
         sharedState: store.state
       }
+    },
+    methods: {
+      replaceUnderscore(text) {
+        return text.replace(/_/g, " ")
+      }
     }
   }
 </script>
@@ -29,5 +39,26 @@
 <style scoped>
   .metadata {
     text-align: left;
+  }
+
+  #title-name:before {
+    content: '';
+    display: block;
+    margin-bottom: 15px;
+    width: 40px;
+    border-bottom: 5px solid #B10000;
+  }
+
+  .flags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flag {
+    list-style: none;
+    background-color: #B10000;
+    padding: 5px 11px;
+    border-radius: 20px;
+    margin: 0 10px 10px 0;
   }
 </style>

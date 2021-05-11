@@ -9,7 +9,12 @@ describe("MetaData.vue", () => {
     title: {
       name: "Against the Tide",
       rating: "TV_PG",
-      description: "A chronicle of the seminal 1970 matchup between USC and the Crimson Tide."
+      description: "A chronicle of the seminal 1970 matchup between USC and the Crimson Tide.",
+      flags: [
+        "LAST_CHANCE",
+        "HD",
+        "FEATURED"
+      ]
     }
   }
 
@@ -34,7 +39,7 @@ describe("MetaData.vue", () => {
         }
       }
     })
-    expect(wrapper.find("#rating").text()).toBe("TV_PG")
+    expect(wrapper.find("#rating").text()).toBe("TV PG")
   })
 
   it('renders movie description', () => {
@@ -47,6 +52,19 @@ describe("MetaData.vue", () => {
       }
     })
     expect(wrapper.find("#description").text()).toBe("A chronicle of the seminal 1970 matchup between USC and the Crimson Tide.")
+  })
+
+  it('renders flags', () => {
+    const wrapper = shallowMount(MetaData, {
+      store,
+      data() {
+        return {
+          sharedState: mockTitleObj
+        }
+      }
+    })
+
+    expect(wrapper.findAll(".flag").length).toBe(3)
   })
 
 })

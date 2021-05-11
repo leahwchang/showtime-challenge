@@ -29,7 +29,8 @@
         let titleObj = {
           name: title.name,
           rating: title.titleRating,
-          description: title.description.short
+          description: title.description.short,
+          flags: title.flags
         }
         store.setMovieTitleAction(titleObj)
       }

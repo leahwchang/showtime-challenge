@@ -1,10 +1,15 @@
 <template>
-  <div class="main-wrapper">
-    <div class="movies-container">
-      <MovieList class="scrollable" :titles="titles" />
+  <div class="main-container">
+    <div class="header">
+      <h1>Showtime Movielist</h1>
     </div>
-    <div class="sidebar">
-      <MetaData />
+    <div class="content-wrapper">
+      <div class="movies-container">
+        <MovieList class="scrollable" :titles="titles" />
+      </div>
+      <div class="sidebar">
+        <MetaData />
+      </div>
     </div>
   </div>
 </template>
@@ -38,30 +43,40 @@
 </script>
 
 <style scoped>
-  .header {
-    height: 60px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .main-wrapper {
+  .main-container {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
     position: absolute;
   }
 
+  .header {
+    height: 60px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    text-align: center;
+    background-color: #000000;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    padding: 0 30px;
+  }
+
   .movies-container {
-    height: 100%;
-    position: fixed;
-    padding: 0px;
-    margin-left: 20px;
-    width: 75%;
+    flex: 1;
+    overflow: auto;
   }
 
   .scrollable {
-    height: 100%;
-    position: relative;
-    overflow-y: scroll;
+    height: 2000px;
   }
 
   .sidebar {

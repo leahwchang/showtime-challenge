@@ -7,10 +7,10 @@ import store from '@/store.js'
 describe("Image.vue", () => {
   const mockImageObj = {
     images: [{
-      "width": 520,
-      "height": 780,
-      "type": "COLLECTION_MOVIE_LIST_DISPLAY",
-      "url": "https://segami.showtime.com/segami/0/0/3398568/00/520x780/image.jpg"
+      width: 520,
+      height: 780,
+      type: "COLLECTION_MOVIE_LIST_DISPLAY",
+      url: "https://segami.showtime.com/segami/0/0/3398568/00/520x780/image.jpg"
     }],
     altText: "Against the Tide"
   }
