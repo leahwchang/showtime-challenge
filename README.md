@@ -7,23 +7,26 @@ Using Vue, render a grid of movie elements and a sidebar that displays metadata 
 This was the first time I used Vue for a project. I used Vue Cli and vue create to set up this project.
 
 Study/Tutorials time: ~ 7 hrs
+
 Planning time: ~ 1 hrs
-Coding time: ~ 5 hrs (including tests)
+
+Coding time: ~ 6.5 hrs (including tests)
+
 Styling time: ~ 2 hrs
 
 ## Project setup
 ```
-yarn install
+yarn
 ```
 
 ### Start up json backend server
 ```
-yarn run backend
+yarn run server
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn run server
+yarn run dev
 ```
 
 ### Compiles and minifies for production
@@ -35,6 +38,3 @@ yarn run build
 ```
 yarn run test:unit
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

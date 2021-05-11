@@ -1,8 +1,8 @@
 <template>
-  <div class="movie">
+  <button class="movie">
     <Image :images="title.images" :altText="title.name" />
-    <h3 @click="clickShowMovieDetails(title)">{{ title.name }}</h3>
-  </div>
+    <h3 @click="handleMovieDetailsClick(title)">{{ title.name }}</h3>
+  </button>
 </template>
 
 <script>
@@ -25,7 +25,7 @@
       }
     },
     methods: {
-      clickShowMovieDetails(title) {
+      handleMovieDetailsClick(title) {
         let titleObj = {
           name: title.name,
           rating: title.titleRating,
@@ -44,9 +44,24 @@
     margin-right: 20px;
     float: left;
     text-align: left;
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+
+  :focus-visible {
+    border: none;
+    outline: none;
+    text-decoration: 2px underline #B10000;
   }
 
   h3 {
     height: 44px;
+    font-size: 18px; 
+    cursor: pointer;
+  }
+
+  h3:hover{
+    text-decoration: 2px underline #B10000;
   }
 </style>
