@@ -5,7 +5,10 @@
     </div>
     <div class="content-wrapper">
       <div class="movies-container">
-        <MovieList class="scrollable" :titles="titles" />
+        <MovieList
+          class="scrollable"
+          :titles="titles"
+        />
       </div>
       <div class="sidebar">
         <MetaData />
@@ -29,6 +32,9 @@
         titles: []
       }
     },
+    async created() {
+      this.titles = await this.fetchTitles()
+    },
     methods: {
       async fetchTitles() {
         try {
@@ -39,9 +45,6 @@
           console.error(err);
         }
       },
-    },
-    async created() {
-      this.titles = await this.fetchTitles()
     },
   }
 </script>

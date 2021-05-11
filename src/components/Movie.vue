@@ -1,7 +1,12 @@
 <template>
   <button class="movie">
-    <Image :images="title.images" :altText="title.name" />
-    <h3 @click="handleMovieDetailsClick(title)">{{ title.name }}</h3>
+    <Image
+      :images="title.images"
+      :alt-text="title.name"
+    />
+    <h3 @click="handleMovieDetailsClick(title)">
+      {{ title.name }}
+    </h3>
   </button>
 </template>
 
@@ -17,7 +22,12 @@
       Image
     },
     props: {
-      title: Object
+      title: {
+        type: Object,
+        default () {
+          return {}
+        }
+      }
     },
     data() {
       return {

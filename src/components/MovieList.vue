@@ -1,7 +1,11 @@
 <template>
   <div class="moviescontainer">
     <div class="movielist">
-      <Movie :key="title.id" v-for="title in titles" :title="title" />
+      <Movie
+        v-for="title in titles"
+        :key="title.id"
+        :title="title"
+      />
     </div>
   </div>
 </template>
@@ -15,7 +19,12 @@
       Movie
     },
     props: {
-      titles: Array
+      titles: {
+        type: Array,
+        default () {
+          return []
+        }
+      }
     }
   }
 </script>

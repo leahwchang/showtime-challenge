@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "yarn run lint --fix",
     "build": "vue-cli-service build",
     "server": "json-server --watch db.json --port 5000",
     "test:unit": "vue-cli-service test:unit"
@@ -21,6 +23,8 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/test-utils": "^2.0.0-0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-vue": "^7.9.0",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   }

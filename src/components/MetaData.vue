@@ -1,11 +1,17 @@
 <template>
   <div class="metadata">
     <div v-if="sharedState.title.name ? true : false">
-      <h2 id="title-name">{{ sharedState.title.name }}</h2>
+      <h2 id="title-name">
+        {{ sharedState.title.name }}
+      </h2>
       <p><strong>Rating:</strong> <span id="rating">{{ replaceUnderscore(sharedState.title.rating) }}</span></p>
       <p><strong>Description:</strong> <span id="description">{{ sharedState.title.description }}</span></p>
       <div class="flags">
-        <span class="flag" v-bind:key="flag" v-for="flag in sharedState.title.flags">
+        <span
+          v-for="flag in sharedState.title.flags"
+          :key="flag"
+          class="flag"
+        >
           {{ replaceUnderscore(flag) }}
         </span>
       </div>
@@ -21,7 +27,12 @@
   export default {
     name: 'MetaData',
     props: {
-      title: Object
+      title: {
+        type: Object,
+        default () {
+          return {}
+        }
+      }
     },
     data() {
       return {
